@@ -2,20 +2,21 @@ module;
 
 #define _BUILD_STD_MODULE
 
-// ´«Í³CÍ·ÎÄ¼ş
+// ä¼ ç»ŸCå¤´æ–‡ä»¶
 
-// <intrin.h>¶¨ÒåÒ»Ğ©²»ÊôÓÚextern "C"¹æ·¶µÄ¶«Î÷
+// <intrin.h>å®šä¹‰ä¸€äº›ä¸å±äºextern "C"è§„èŒƒçš„ä¸œè¥¿
 
 export module std;
 
-// ·À¾¯¸æ
+// é˜²è­¦å‘Š
 #pragma warning(push)
 #pragma warning(disable : 5244)
 
-// C++Í·ÎÄ¼ş
+// C++å¤´æ–‡ä»¶
+#include <functional>
 #include <iostream>
 
-// C++µÄC¹¦ÄÜ¿â
+// C++çš„CåŠŸèƒ½åº“
 
-// ¸´Ô­¾¯¸æ
+// å¤åŸè­¦å‘Š
 #pragma warning(pop)

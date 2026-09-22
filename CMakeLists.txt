@@ -15,11 +15,11 @@ set(CMAKE_CXX_STANDARD 23)
 
 project ("IrisWinExample")
 
-# 包含子项目。
-# - 标准库
+# - std
 add_subdirectory ("std")
 # - 主要库
+# - library
 add_subdirectory ("IrisWin")
 # - 示例代码
 # - example of using
-add_subdirectory ("example")
+# add_subdirectory ("example")

@@ -1,6 +1,4 @@
-# CMakeList.txt: IrisWin 项目文件，在此处执行全局配置
-# 并包含子项目。
-#
+# CMakeLists: IrisWin CMake
 cmake_minimum_required (VERSION 4.3.0)
 
 # 如果支持，请为 MSVC 编译器启用热重载。
@@ -14,15 +12,3 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 23)
 
 project ("IrisWin")
-
-add_library(IrisWin)
-
-target_sources(IrisWin
-	PUBLIC
-	FILE_SET CXX_MODULES FILES
-		"IrisWin.ixx" "IrisWin/classes.ixx" "IrisWin/window.ixx" "IrisWin/define_enum.ixx"
-	PRIVATE
-		 "IrisWin/define_enum.cpp"
-)
-
-target_link_libraries(IrisWin PRIVATE std)

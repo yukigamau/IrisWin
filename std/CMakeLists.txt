@@ -7,9 +7,8 @@ add_library (std)
 target_sources(std
 	PUBLIC
 		FILE_SET CXX_MODULES FILES
-		"std.ixx" "std.compat.ixx" "std.extra.ixx" )
+		"std.ixx")
 
 set_property(TARGET std PROPERTY CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_MODULE_STD 1)
-# TODO: 如有需要，请添加测试并安装目标。
