@@ -7,8 +7,21 @@ if (POLICY CMP0141)
   set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>")
 endif()
 
-set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "451f2fe2-a8a2-47c3-bc32-94786d8fc91b")
+set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 23)
 
+
 project ("IrisWin")
+add_library (IrisWin)
+target_sources (IrisWin
+	PUBLIC
+		FILE_SET CXX_MODULES FILES
+			"IrisWin.ixx"
+			"Win/HINSTANCE.ixx" "Win/Mutex.ixx" "Win/Text.ixx"
+			"App.ixx"
+)
+
+target_compile_definitions (IrisWin PRIVATE UNICODE _UNICODE)
+
+target_link_libraries (IrisWin PRIVATE std)
