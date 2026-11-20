@@ -1,20 +1,16 @@
 cmake_minimum_required (VERSION 3.30)
 
-set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD ON)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_STANDARD 23)
-
-project ("example")
-# need WIN32 to compile as a windows program
-add_executable (example WIN32 "main.cpp")
+add_executable (example WIN32)
 target_sources(example
+    PRIVATE
+        "main.cpp"
 	PUBLIC
 		FILE_SET CXX_MODULES FILES
             "MyApp.ixx"
 )
 
-# set ANSI or UNICODE
 target_compile_definitions (example PRIVATE UNICODE _UNICODE)
+target_compile_features (example PRIVATE cxx_std_23)
 
 # allow Chinese to be read correctly
 if(MSVC)
@@ -22,4 +18,4 @@ if(MSVC)
     target_compile_options(example PRIVATE /utf-8)
 endif()
 
-target_link_libraries (example PRIVATE IrisWin)
+target_link_libraries (example PRIVATE orchidWin)

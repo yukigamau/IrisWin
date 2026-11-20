@@ -1,5 +1,5 @@
 #include <Windows.h>
-import IrisWin;
+import orchidWin;
 import MyApp;
 
 int CALLBACK WinMain(
@@ -10,7 +10,7 @@ int CALLBACK WinMain(
 {
     Example::MyApp myApp;
 
-    using IrisWin::CreateMutexRes;
+    using orchidWin::CreateMutexRes;
     auto res = myApp.createMutex(L"Local\\IrisWin.Example.SingleInstance");
 
     switch (res)

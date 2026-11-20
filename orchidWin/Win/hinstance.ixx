@@ -1,8 +1,8 @@
 module;
 #include <Windows.h>
-export module IrisWin_HINSTANCE;
+export module orchidWin_hinstance;
 
-export namespace IrisWin
+export namespace orchidWin
 {
 	HINSTANCE getHIns()noexcept
 	{

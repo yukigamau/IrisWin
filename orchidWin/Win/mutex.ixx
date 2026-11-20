@@ -1,14 +1,14 @@
 // 命名互斥锁的处理
 module;
 #include <Windows.h>
-export module IrisWin_Mutex;
+export module orchidWin_mutex;
 import std;
 
-export namespace IrisWin
+export namespace orchidWin
 {
 	enum class CreateMutexRes
 	{
-		FAILED = -1,
+		FAILED = -1L,
 		ALREADY_EXISTS = ERROR_ALREADY_EXISTS,
 		SUCCESS = ERROR_SUCCESS
 	};
@@ -26,13 +26,13 @@ export namespace IrisWin
 	};
 }
 
-IrisWin::NamedMutex::~NamedMutex()
+orchidWin::NamedMutex::~NamedMutex()
 {
 	if (handle)
 		CloseHandle(handle);
 }
 
-IrisWin::CreateMutexRes IrisWin::NamedMutex::create(const std::wstring& name)noexcept
+orchidWin::CreateMutexRes orchidWin::NamedMutex::create(const std::wstring& name)noexcept
 {
 	this->name = name;
 

@@ -1,12 +1,12 @@
 ﻿module;
 #include <Windows.h>
-export module IrisWin_App;
+export module orchidWin_app;
 
 import std;
-import IrisWin_HINSTANCE;
-import IrisWin_Mutex;
+import orchidWin_hinstance;
+import orchidWin_mutex;
 
-export namespace IrisWin
+export namespace orchidWin
 {
 	// 一个程序的入口
 	// 实际使用时，应当对其进行继承，定制一个App类
@@ -27,12 +27,12 @@ export namespace IrisWin
 	};
 }
 
-IrisWin::App::App()
+orchidWin::App::App()
 	:hIns{ getHIns() }
 {
 }
 
-IrisWin::CreateMutexRes IrisWin::App::createMutex(const std::wstring& name)
+orchidWin::CreateMutexRes orchidWin::App::createMutex(const std::wstring& name)
 {
 	return nm.create(name);
 }
